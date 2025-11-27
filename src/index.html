@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="./style.css">
+
+<title>English Picture Dictionary</title>
+
+</head>
+
+<body>
+
+<header>
+    <h1>English Picture Dictionary</h1>
+
+    <div class="search-container">
+        <input id="searchInput" placeholder="Search for a word" />
+        <button onclick="searchWord()">Search</button>
+    </div>
+
+    <p class="description">
+        An online dictionary for learners of English, offering clear definitions, images,
+        example sentences, and useful synonyms to support language learning.
+    </p>
+</header>
+
+<div class="categories" id="categoryGrid"></div>
+<script>const categories = [
+        "Animals",
+        "Birds and Insects",
+        "Fish",
+        "Food",
+        "Drinks",
+        "Fruits",
+        "Vegetables",
+        "Jobs"
+    ];
+
+    const grid = document.getElementById("categoryGrid");
+
+    // Load category boxes dynamically
+    categories.forEach(cat => {
+        const box = document.createElement("div");
+        box.className = "category-box";
+        box.textContent = cat;
+        box.onclick = () => alert("Clicked: " + cat);
+        grid.appendChild(box);
+    });
+
+    // Simple search function
+    function searchWord() {
+        let word = document.getElementById("searchInput").value;
+        if (!word.trim()) {
+            alert("Please enter a word.");
+            return;
+        }
+        alert("Searching for: " + word);
+    }</script>
+
+</body>
+</html>
