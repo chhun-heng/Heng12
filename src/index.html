@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="./style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English Picture Dictionary</title>
-
+<link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
 
-<header>
+<!-- Header -->
+<div class="header">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Languee_Letter_L_Logo.png/768px-Languee_Letter_L_Logo.png" alt="Logo">
     <h1>English Picture Dictionary</h1>
+</div>
 
-    <div class="search-container">
-        <input id="searchInput" placeholder="Search for a word" />
-        <button onclick="searchWord()">Search</button>
+<!-- Search -->
+<div class="search-container">
+    <input class="search-box" type="text" placeholder="Search for a word">
+    <button class="flag-btn">🇬🇧</button>
+    <button class="search-btn">🔍 Search</button>
+</div>
+
+<p class="description">
+    An online dictionary for learners of English, offering clear definitions, images, example sentences, 
+    and useful synonyms to support language learning.
+</p>
+
+<!-- Categories -->
+<div class="grid">
+    <div class="card">
+        <img src="https://imgs.search.brave.com/a2cXQzRf5wuNu3WS3ElRBsjXJm1VM4C4UvXnnHZjfac/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTUv/MDg0LzQxMy9zbWFs/bC9zbWlsaW5nLWxp/b24tY3V0ZS15b3Vu/Zy1hbmltYWwtaXNv/bGF0ZWQtcG5nLnBu/Zw">
+        <div class="card-title">Animals</div>
     </div>
 
-    <p class="description">
-        An online dictionary for learners of English, offering clear definitions, images,
-        example sentences, and useful synonyms to support language learning.
-    </p>
-</header>
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/bird.png">
+        <div class="card-title">Birds and Insects</div>
+    </div>
 
-<div class="categories" id="categoryGrid"></div>
-<script>const categories = [
-        "Animals",
-        "Birds and Insects",
-        "Fish",
-        "Food",
-        "Drinks",
-        "Fruits",
-        "Vegetables",
-        "Jobs"
-    ];
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/fish.png">
+        <div class="card-title">Fish</div>
+    </div>
 
-    const grid = document.getElementById("categoryGrid");
+    <div class="card">
+        <img src="https://imgs.search.brave.com/DmkhuAZF66nNPyhWFtuSSADm23NTcQfIRNP7UiLc77U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3IvcGl4ZWwtYXJ0/LXNuYWNrLWZvb2Qt/Y2FydG9vbi12ZWN0/b3ItaWxsdXN0cmF0/aW9uXzEzMzY1NzUt/NTQ1Ny5qcGc_c2Vt/dD1haXNfaHlicmlk">
+        <div class="card-title">Food</div>
+    </div>
 
-    // Load category boxes dynamically
-    categories.forEach(cat => {
-        const box = document.createElement("div");
-        box.className = "category-box";
-        box.textContent = cat;
-        box.onclick = () => alert("Clicked: " + cat);
-        grid.appendChild(box);
-    });
+    <div class="card">
+        <img src="https://imgs.search.brave.com/baTsLdc7t6IMjkadmmViDrmnbjltRzj6p0uNEn4FCb4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8w/Ni8wMi8xMC81NS9k/cmlua3MtMTQzMDcz/OV82NDAucG5n">
+        <div class="card-title">Drinks</div>
+    </div>
 
-    // Simple search function
-    function searchWord() {
-        let word = document.getElementById("searchInput").value;
-        if (!word.trim()) {
-            alert("Please enter a word.");
-            return;
-        }
-        alert("Searching for: " + word);
-    }</script>
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/watermelon.png">
+        <div class="card-title">Fruits</div>
+    </div>
+
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/carrot.png">
+        <div class="card-title">Vegetables</div>
+    </div>
+
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/briefcase.png">
+        <div class="card-title">Jobs</div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>Download LanGeek app</p>
+    <button class="download-btn">⬇ Download</button>
+</div>
 
 </body>
 </html>
